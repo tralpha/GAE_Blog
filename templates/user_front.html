@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+	{% block body %}
+		{% if user %}
+			<a class="login-link" href="_edit/{{wikiname}}">Edit</a>
+			|
+			<a class="login-link" href="_history/{{wikiname}}">History &nbsp</a>
+			{{username}} (<a class="login-link" href="/logout">Logout</a>)
+		{% else %}
+			<a class="login-link" href="/login">login</a>
+			|
+			<a class="login-link" href="/signup">signup</a>
+		{% endif %}
+	{% endblock %}
+
+	
+	
+	{% block content %}
+	
+	{% if user %}
+	{{content}}
+	
+	{% else %}
+	
+	<h1>Welcome to Ralph's Wiki!</h1>
+	{% endif %}
+	
+	{% endblock %}

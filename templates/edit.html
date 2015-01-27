@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+	{% if wiki %}
+	  <a class="login-link" href="../{{name}}?v={{wiki.key().id()}}">View</a>
+    {% else %}
+	  <a class="login-link" href="../{{name}}">View</a>
+	{% endif %}
+	  |
+      <a class="login-link" href="_history/{{wiki.name}}">History &nbsp</a>
+      {{username}} ( <a class="login-link" href="/logout">Logout</a>)
+{% endblock %}
+
+{% block content %}
+<form method="post">
+	<label>
+		<textarea name="content">{{wiki.content}}</textarea>
+	</label>
+	<div class="error">{{error}}</div>
+	<input type="submit" value="Save">
+</form>
+{% endblock %}

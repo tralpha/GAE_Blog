@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/static/main.css" />
+</head>
+
+<body>
+	<a href="/" class="main-title">
+	
+	</a>
+	
+	<div class="login-area">
+		{%block body %}
+		<a class="login-link" href="/login">login</a>
+		|
+		<a class="login-link" href="/signup">signup</a>
+		{% endblock %}
+	</div>
+	
+	<div id="content">
+	
+	</div>
+</body>
+</html>
+{% block content %}
+<h1>This is where the Post will display </h1>
+{% endblock %}
+
+
+
+		
+	

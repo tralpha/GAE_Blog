@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<a class="login-link" href="/_edit{{name}}">Edit</a>
+	|
+	
+	{{username}} (<a class="login-link" href="/logout">Logout</a>)
+{% endblock %}
+
+{% block content %}
+	<table>
+	{%for wiki in wikis%}
+    <tr class="even">
+		<td>{{wiki.content}}</td>
+		
+		<td>
+			<a href="..{{name}}?v={{wiki.key().id()}}">
+				View
+			</a>
+		</td>
+		
+		<td>
+			<a href="/_edit{{name}}?v={{wiki.key().id()}}">
+				Edit
+			</a>
+		</td>
+	</tr>
+	{% endfor %}
+	</table>
+
+
+{% endblock %}
